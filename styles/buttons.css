@@ -1,0 +1,56 @@
+.button {
+	font-size: 16px;
+	text-align: center;
+	cursor: pointer;
+	outline-color: var(--pink2);
+}
+.button-transparent {
+	border-color: var(--pink);
+	border-style: solid;
+	border-width: 1px;
+	width: 205px;
+	height: 45px;
+	background-color: transparent;
+	color: var(--pink);
+}
+.button-transparent:hover {
+	background: radial-gradient(circle 150px at center, var(--red), var(--pink));
+	color: white;
+}
+.button-transparent:active {
+
+}
+.button-red {
+	border-style: none;
+	border-width: 0px;
+	width: 270px;
+	height: 60px;
+	background-color: var(--red);
+	color: white;
+}
+.button-red:hover {
+	background-color: white;
+	color: var(--red);
+	border-width: 1px;
+	border-style: solid;
+	border-color: var(--red);
+}
+.button-red:active {
+	
+}
+
+.button-round {
+	display: none;
+	justify-content: center;
+	width: 26px;
+	height: 26px;
+	border-radius: 13px;
+}
+@media (max-width: 455px) {
+	.button-round {
+		display: inline-flex;
+	}
+	.button-header {
+		display: none;
+	}
+}
