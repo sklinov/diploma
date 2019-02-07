@@ -1,6 +1,8 @@
 @import url("fonts.css");
 @import url("material-icons.css");
 @import url("buttons.css");
+@import url("gallery.css");
+@import url("social.css");
 
 :root {
 	--pink: #fc557c;
@@ -11,6 +13,7 @@
 	--subh: #8993ad;
 	--orange: #ff8f5a;
 	--violet: #31293c;
+	--ltgrey: #ebebeb;
 }
 
 .page {
@@ -61,7 +64,7 @@
 	flex-wrap: wrap;
 	margin-left: auto;
 	margin-right: auto;
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 }
 .screen__container-row {
 	flex-direction: row;
@@ -78,6 +81,25 @@
 	justify-content: center;
 	padding-top: 100px;
 	padding-bottom: 100px;
+}
+.screen__container-white {
+	color: white;
+	align-items: center;
+	justify-content: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.screen__container-narrow {
+	max-width: 970px;
+	padding-top: 30px;
+	padding-bottom: 60px;
+}
+.screen__container-footer {
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	flex-wrap: wrap;
 }
 
 @media (max-width: 1024px) {
@@ -131,9 +153,15 @@
 	}
 }
 
+.menu-footer {
+	display: flex;
+	flex-direction: column;
+	color: var(--subh);
+}
 
 .link {
 	text-decoration: none;
+	color: currentColor;
 }
 .link:hover {
 	cursor: pointer;
@@ -147,6 +175,11 @@
 	margin-left: auto;
 	margin-right: 30px;
 }
+.contact-footer {
+	margin: 0px;
+
+}
+
 @media (max-width: 1024px) {
 	.contact {
 		font-size: 25px;
@@ -202,10 +235,23 @@
 .h2 {
 	font-size: 54px;
 	font-weight: 700;
-	padding-bottom: 100px;
+	padding-bottom: 50px;
+	text-align: center;
 }
 @media (max-width: 455px) {
 	.h2 {
+		font-size: 30px;
+	}
+}
+
+.h3 {
+	font-size: 45px;
+	font-weight: 700;
+	padding-bottom: 50px;
+	text-align: center;
+}
+@media (max-width: 455px) {
+	.h3 {
 		font-size: 30px;
 	}
 }
@@ -251,7 +297,7 @@
 	text-align: center;
 	max-width: 270px;
 	padding: 10px;
-	border: 1px solid red;
+	/*border: 1px solid red;*/
 }
 @media (max-width: 1024px){
 	.services__item {
@@ -267,3 +313,21 @@
 	font-size: 20px;
 	color: var(--subh);
 }
+
+.white {
+	color: white;
+	text-align: left;
+}
+
+.footer {
+
+}
+
+.footer__block {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	flex-wrap: nowrap;
+	line-height: 2;
+}
+
