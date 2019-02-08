@@ -39,7 +39,7 @@ function set_starting_point(block,letter_block,left_pos) {
 					  "left": left_pos+"%"
 						 });
 	var starting_point = {'top' : top_pos, 'left' : left_pos};
-	console.log(starting_point);
+	//console.log(starting_point);
 	return starting_point; 
 }
 
@@ -54,7 +54,7 @@ function define_coordinates(block,starting_point,letter_count) {
 		coord.size[i]=15+Math.random()*40;
 		coord.rotation[i]=Math.random()*45;
 	}
-	console.log(coord);
+	//console.log(coord);
 	return coord;
 }
 
