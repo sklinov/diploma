@@ -141,6 +141,7 @@
 
 .menu__item {
 	padding-right: 30px;
+	list-style: none;
 }
 
 .menu__burger {
