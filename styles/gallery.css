@@ -25,6 +25,12 @@
 .gallery__img {
 	padding-bottom: 35px;
 }
+@media (max-width: 455px)
+{
+	.gallery__img {
+		max-width: 280px;
+	}
+}
 
 .gallery__caption {
 	text-align: center;

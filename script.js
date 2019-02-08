@@ -9,8 +9,8 @@ $(function() {
 		
 	var first_screen=$('#firstscreen');
 	var price=$('#price');
-	var first=$('.first');
-	var second=$('.second');
+	var first=$('.fly-first');
+	var second=$('.fly-second');
 
 	var starting_point=set_starting_point(first_screen,first,30);
 	var c=define_coordinates(first_screen,starting_point,first_letter_count);
@@ -69,7 +69,7 @@ function make_letters_fly(start_position, letter_count,rotation,posx,posy,size) 
 							 "font-size": size[i]
 							});
 
-			$('#fly'+(start_position+i+1)).toggleClass("hidden");
+			$('#fly'+(start_position+i+1)).toggleClass("fly-hidden");
 		}
 	}
 	

@@ -3,6 +3,7 @@
 @import url("buttons.css");
 @import url("gallery.css");
 @import url("social.css");
+@import url("fly.css");
 
 :root {
 	--pink: #fc557c;
@@ -88,6 +89,7 @@
 	justify-content: center;
 	padding-top: 30px;
 	padding-bottom: 30px;
+	white-space: nowrap;
 }
 .screen__container-narrow {
 	max-width: 970px;
@@ -117,6 +119,10 @@
 @media (max-width: 455px) {
 	.screen__container {
 		max-width: 280px;
+	}
+	.screen__container-main {
+		padding-top: 50px;
+		padding-bottom: 50px;
 	}
 } 
 
@@ -177,6 +183,7 @@
 }
 .contact-footer {
 	margin: 0px;
+	color: var(--subh);
 
 }
 
@@ -313,6 +320,11 @@
 	font-size: 20px;
 	color: var(--subh);
 }
+@media (max-width: 1024px) {
+	.services__caption {
+		font-size: 16px;
+	}
+}
 
 .white {
 	color: white;
@@ -329,5 +341,6 @@
 	height: 100%;
 	flex-wrap: nowrap;
 	line-height: 2;
+	padding-bottom: 30px;
 }
 
