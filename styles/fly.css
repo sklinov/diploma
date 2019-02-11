@@ -5,6 +5,7 @@
 	background: linear-gradient(to top, var(--orange), var(--pink2));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	z-index: 90;
 }
 .fly-first {
 	top: 300px;

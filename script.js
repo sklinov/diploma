@@ -1,12 +1,14 @@
 $(function() {
-	
+
+	$('#menu__burger').click(function() {
+		show_menu();
+	});	
 
 	var first_letter_count=5;
 	var second_letter_count=5;
 	var first_start_position=0;
 	var second_start_position=5;
 	
-		
 	var first_screen=$('#firstscreen');
 	var price=$('#price');
 	var first=$('.fly-first');
@@ -72,4 +74,14 @@ function make_letters_fly(start_position, letter_count,rotation,posx,posy,size) 
 			$('#fly'+(start_position+i+1)).toggleClass("fly-hidden");
 		}
 	}
-	
+
+function show_menu() {
+	$('#menu').toggleClass("menu-popup");
+	$('#menu').toggleClass("menu-popup-shown");
+	$('#menu__burger-burger').toggle();
+	$('#menu__burger-clear').toggle();
+	$('.menu__item.link').click(function() {
+		show_menu();
+	});
+	}
+
