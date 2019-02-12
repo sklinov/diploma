@@ -73,7 +73,9 @@
 	<div class="screen screen-grey" id="portfolio">
 		<div class="screen__container screen__container-main">
 			<h2 class="h2">Примеры моих работ</h2>
+			
 			<div class="gallery">
+				<span class="gallery__arrow-left"></span>
 				<div class="gallery__item">
 					<img class="gallery__img" src="images/ex1.png" alt="Сайт психолога Веры Антоновой">
 					<div class="gallery__caption">Сайт психолога Веры Антоновой</div>
@@ -86,7 +88,9 @@
 					<img class="gallery__img" src="images/ex3.png" alt="Сайт магазина Рыболов">
 					<div class="gallery__caption">Сайт магазина "Рыболов"</div>
 				</div>
+				<span class="gallery__arrow-right"></span>
 			</div>
+			
 			<div class="gallery__dots">
 					<button class="gallery__dot gallery__dot-active"></button>
 					<button class="gallery__dot"></button>
@@ -147,13 +151,13 @@
 				clear
 			</i>
 			<h3 class="h3 h3-modal">Заказать звонок</h2>
-			<form target="" class="modal__form">
+			<form class="modal__form">
 				<label for="name" class="modal__label">Имя:</label>
 				<input type="text" id="name" class="modal__field" placeholder="Моё имя" required="required">
 				<label for="phone" class="modal__label">Телефон:</label>
 				<input type="tel" id="phone" class="modal__field" required="required">
 				<label for="mail" class="modal__label" id="mail-label">Электронная почта:</label>
-				<input type="text" id="mail" class="modal__field" placeholder="Моя электронной почта">
+				<input type="email" id="mail" class="modal__field" placeholder="Моя электронной почта">
 				<input type="submit" value="Заказать звонок" class="button button-white" id="order-call-button">
 			</form>
 			

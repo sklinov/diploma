@@ -1,8 +1,11 @@
 $(function() {
+	//menu burger
 
 	$('#menu__burger').click(function() {
 		show_menu();
 	});	
+
+	//modal windows
 
 	$('#order-call,#order-call-footer').click(function() {
 		show_modal(false,"Заказать звонок");
@@ -10,7 +13,13 @@ $(function() {
 	$('#know-more,#know-price,#know-project').click(function() {
 		show_modal(true,"Cвязаться с нами");
 	});
+	//gallery
 
+	gallery_arrows();
+
+	gallery();
+
+	// flying letters
 	var first_letter_count=5;
 	var second_letter_count=5;
 	var first_start_position=0;
@@ -114,5 +123,33 @@ function show_modal(show_mail,label) {
 	$('#order-call-button').click(function() {
 		$('.modal__form').hide();
 		$('.h3.h3-modal').html("Спасибо!<br>Мы свяжемся с вами в ближайшее время.");	
+	});
+}
+
+
+function gallery() {
+	var items=$('.gallery__item').length;
+	var dots=$('.gallery__dot').length;
+	console.log('items:'+items);
+	console.log('dots:'+dots);
+	$('.gallery__dot').click(function(){
+		var index=$(this).index();
+		$('.gallery__dot').removeClass("gallery__dot-active");
+		$(this).addClass("gallery__dot-active");
+		console.log(index);
+	})
+
+}
+
+function gallery_arrows() {
+	
+	$('.gallery__arrow-left').click(function(){
+		console.log('click arrow left');
+   		$(".gallery__item:last").detach().insertBefore(".gallery__item:first");
+	});
+
+	$('.gallery__arrow-right').click(function(){
+		console.log('click arrow right');
+	    $(".gallery__item:first").detach().insertAfter(".gallery__item:last");
 	});
 }
