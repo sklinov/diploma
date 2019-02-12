@@ -133,10 +133,28 @@ function gallery() {
 	console.log('items:'+items);
 	console.log('dots:'+dots);
 	$('.gallery__dot').click(function(){
+		//switch dots
 		var index=$(this).index();
 		$('.gallery__dot').removeClass("gallery__dot-active");
 		$(this).addClass("gallery__dot-active");
-		console.log(index);
+		//switch gallery__items
+		//only one gallery__item shown
+		if($(window).width()<945)
+		{
+			$('.gallery__item').eq(index).css("display","block");
+			$('.gallery__item').not($('.gallery__item').eq(index)).css("display","none");
+		}
+		//two galley__items shown
+		if($(window).width()>945 && $(window).width()<1196)
+		{	
+			$('.gallery__item').css("display","none");
+			$('.gallery__item').eq(index).css("display","block");
+			$('.gallery__item').eq(index+1).css("display","block");
+			if(index==$(this).length+1)
+			{
+				$('.gallery__item').eq(index-1).css("display","block");
+			}
+		}
 	})
 
 }
@@ -144,12 +162,10 @@ function gallery() {
 function gallery_arrows() {
 	
 	$('.gallery__arrow-left').click(function(){
-		console.log('click arrow left');
-   		$(".gallery__item:last").detach().insertBefore(".gallery__item:first");
+		$(".gallery__item:last").detach().insertBefore(".gallery__item:first");
 	});
 
 	$('.gallery__arrow-right').click(function(){
-		console.log('click arrow right');
-	    $(".gallery__item:first").detach().insertAfter(".gallery__item:last");
+		$(".gallery__item:first").detach().insertAfter(".gallery__item:last");
 	});
 }
