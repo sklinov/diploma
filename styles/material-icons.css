@@ -39,3 +39,6 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  .material-icons-white {
+    color: white;
+  }

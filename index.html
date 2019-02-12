@@ -6,6 +6,7 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="../diploma/images/favicon-16x16.png">
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
 	<script src="jquery-3.3.1.min.js"></script>
+	<script src="jquery.maskedinput.js"></script>
 	<script src="script.js"></script>
 	<title>
 		Front-end разработка и веб-верстка
@@ -24,7 +25,7 @@
 				<span class="menu__burger-clear" id="menu__burger-clear">clear</span>
 			</i>
 			<div class="contact">+7 (499) 995-55-77</div>
-			<button class="button button-transparent button-header">Заказать звонок</button>
+			<button class="button button-transparent button-header" id="order-call">Заказать звонок</button>
 			<button class="button button-transparent button-round" ><i class="material-icons material-icons-gradient material-icons-button-round">call</i></button>
 		</div>
 	</header>
@@ -33,7 +34,7 @@
 			<div class="title-container">
 				<h1 class="h1">Дмитрий Алексеев</h1>
 				<div class="h1__subtitle">Frontend-разработчик и веб-верстальщик</div>
-				<button class="button button-red">Узнать больше</button>
+				<button class="button button-red" id="know-more">Узнать больше</button>
 			</div>
 			<img class="portrait" src="images/portrait.png" alt="Potrait">
 		</div>
@@ -66,7 +67,7 @@
 					<div class="services__caption">Исправление и&nbsp;доработка существующей вёрстки</div>
 				</div>
 			</div>
-			<button class="button button-red">Узнать стоимость</button>
+			<button class="button button-red" id="know-price">Узнать стоимость</button>
 		</div>
 	</div>
 	<div class="screen screen-grey" id="portfolio">
@@ -91,7 +92,7 @@
 					<button class="gallery__dot"></button>
 					<button class="gallery__dot"></button>
 			</div>
-			<button class="button button-red">Заказать проект</button>
+			<button class="button button-red" id="know-project">Заказать проект</button>
 		</div>
 	</div>
 	<div class="screen screen-gradient" id="price">
@@ -125,7 +126,7 @@
 				</div>
 			</div>
 			<div class="footer__block">
-				<button class="button button-transparent">Заказать звонок</button>
+				<button class="button button-transparent" id="order-call-footer">Заказать звонок</button>
 				<div class="social">
 					<div class="social__icon social__icon-vk" > </div>
 					<div class="social__icon social__icon-fb" > </div>
@@ -140,15 +141,23 @@
 			© Дмитрий Алексеев, 2016 – 2018
 		</div>
 	</div>
-	<div class="modal">
-		<h2 class="h2">Заказать звонок</h2>
-		<form target="" class="modal__form">
-			<label for="name" class="modal__label">Имя:</label>
-			<input type="text" id="name" class="modal__field">
-			<label for="phone" class="modal__label">Телефон:</label>
-			<input type="text" id="phone" class="modal__field">
-			<input type="submit" value="Отправить" class="button button-red">
-		</form>
+	<div class="modal" id="modal-call">
+		<div class="modal-container">
+			<i class="material-icons material-icons-white modal__clear" id="modal__clear">
+				clear
+			</i>
+			<h3 class="h3 h3-modal">Заказать звонок</h2>
+			<form target="" class="modal__form">
+				<label for="name" class="modal__label">Имя:</label>
+				<input type="text" id="name" class="modal__field" placeholder="Моё имя" required="required">
+				<label for="phone" class="modal__label">Телефон:</label>
+				<input type="tel" id="phone" class="modal__field" required="required">
+				<label for="mail" class="modal__label" id="mail-label">Электронная почта:</label>
+				<input type="text" id="mail" class="modal__field" placeholder="Моя электронной почта">
+				<input type="submit" value="Заказать звонок" class="button button-white" id="order-call-button">
+			</form>
+			
+		</div>
 	</div>
 </body>
 </html>

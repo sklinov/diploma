@@ -4,6 +4,13 @@ $(function() {
 		show_menu();
 	});	
 
+	$('#order-call,#order-call-footer').click(function() {
+		show_modal(false,"Заказать звонок");
+	});
+	$('#know-more,#know-price,#know-project').click(function() {
+		show_modal(true,"Cвязаться с нами");
+	});
+
 	var first_letter_count=5;
 	var second_letter_count=5;
 	var first_start_position=0;
@@ -85,3 +92,27 @@ function show_menu() {
 	});
 	}
 
+function show_modal(show_mail,label) {
+	$('.h3.h3-modal').html(label);
+	if(show_mail)
+	{
+		$('.modal__form').css("height","60%");
+		$('#mail, #mail-label').show();
+
+	}
+	if(!show_mail)
+	{
+		$('.modal__form').css("height","50%");
+		$('#mail, #mail-label').hide();
+	}
+	var completed=false;
+	$('#phone').mask("+7(999)999-99-99",{placeholder:" "});
+	$('#modal-call').toggle();
+	$('#modal__clear').click(function() {
+		show_modal();
+	});
+	$('#order-call-button').click(function() {
+		$('.modal__form').hide();
+		$('.h3.h3-modal').html("Спасибо!<br>Мы свяжемся с вами в ближайшее время.");	
+	});
+}
