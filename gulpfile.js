@@ -7,9 +7,9 @@ gulp.task('default', () =>
     gulp.src('src/**/*.css')
         .pipe(sourcemaps.init())
         .pipe(autoprefixer())
-        .pipe(concat('all.css'))
+        .pipe(concat('styles.css'))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('styles'))
 );
 
-exports.default = autoprefix;
+//exports.default = autoprefix();
