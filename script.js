@@ -1,13 +1,11 @@
 $(function() {
 	//menu burger
-
 	$('#menu__burger').click(function() {
 		show_menu();
 	});	
 
 	//modal windows
-
-	$('#order-call,#order-call-footer').click(function() {
+	$('#order-call,#order-call-small,#order-call-footer').click(function() {
 		show_modal(false,"Заказать звонок");
 	});
 	$('#know-more,#know-price,#know-project').click(function() {
@@ -18,7 +16,10 @@ $(function() {
 	gallery_arrows();
 
 	gallery();
+	// swipe
 
+	gallery_swipe();
+	
 	// flying letters
 	var first_letter_count=5;
 	var second_letter_count=5;
@@ -130,9 +131,9 @@ function show_modal(show_mail,label) {
 function gallery() {
 	var items=$('.gallery__item').length;
 	var dots=$('.gallery__dot').length;
-	console.log('items:'+items);
-	console.log('dots:'+dots);
+	
 	$('.gallery__dot').click(function(){
+		
 		//switch dots
 		var index=$(this).index();
 		$('.gallery__dot').removeClass("gallery__dot-active");
@@ -160,12 +161,45 @@ function gallery() {
 }
 
 function gallery_arrows() {
-	
 	$('.gallery__arrow-left').click(function(){
 		$(".gallery__item:last").detach().insertBefore(".gallery__item:first");
 	});
 
 	$('.gallery__arrow-right').click(function(){
 		$(".gallery__item:first").detach().insertAfter(".gallery__item:last");
+	});
+}
+
+function gallery_swipe()
+{
+	$('.gallery__item').hammer().bind("swipeleft", function () {
+		$(".gallery__item:first").detach().insertAfter(".gallery__item:last");
+	});	
+}
+
+
+function gallery_swipe() {
+	var dots=$('.gallery__dot').length;
+
+	$('.gallery__item').hammer().bind("swipeleft", function () {
+		var index=$('.gallery__dot').index($('.gallery__dot-active'));
+		$('.gallery__dot').removeClass("gallery__dot-active");
+		var next;
+		if(index<(dots-1))	{next=index+1;}
+		if(index==(dots-1))	{next=0;      }
+				
+		$('.gallery__dot').eq(next).addClass("gallery__dot-active");
+		$(".gallery__item:first").detach().insertAfter(".gallery__item:last");
+	});
+
+	$('.gallery__item').hammer().bind("swiperight", function () {
+		var index=$('.gallery__dot').index($('.gallery__dot-active'));
+		$('.gallery__dot').removeClass("gallery__dot-active");
+		var next;
+		if(index>0)	{next=index-1;}
+		if(index==0){next=dots-1; }
+		
+		$('.gallery__dot').eq(next).addClass("gallery__dot-active");
+		$(".gallery__item:last").detach().insertBefore(".gallery__item:first");			
 	});
 }
