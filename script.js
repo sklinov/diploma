@@ -9,7 +9,7 @@ $(function() {
 		show_modal(false,"Заказать звонок");
 	});
 	$('#know-more,#know-price,#know-project').click(function() {
-		show_modal(true,"Cвязаться с нами");
+		show_modal(true,"Cвязаться со мной");
 	});
 	//gallery
 
