@@ -95,6 +95,7 @@ function make_letters_fly(start_position, letter_count,rotation,posx,posy,size) 
 function show_menu() {
 	$('#menu').toggleClass("menu-popup");
 	$('#menu').toggleClass("menu-popup-shown");
+	$('.menu__item').toggleClass("menu__item-popup");
 	$('#menu__burger-burger').toggle();
 	$('#menu__burger-clear').toggle();
 	$('.menu__item.link').click(function() {
